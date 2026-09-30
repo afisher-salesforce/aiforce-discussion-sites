@@ -1,16 +1,22 @@
-const express = require('express');
-const path    = require('path');
-const app     = express();
-const PORT    = process.env.PORT || 3000;
+const http = require('http');
+const fs   = require('fs');
+const path = require('path');
 
-// Serve the infographic as the root page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'se-workflow-infographic.html'));
+const PORT = process.env.PORT || 3000;
+const FILE = path.join(__dirname, 'se-workflow-infographic.html');
+
+const server = http.createServer((req, res) => {
+  fs.readFile(FILE, (err, data) => {
+    if (err) {
+      res.writeHead(500);
+      res.end('Error loading page');
+      return;
+    }
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end(data);
+  });
 });
 
-// Serve any other static files in the repo
-app.use(express.static(__dirname));
-
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
