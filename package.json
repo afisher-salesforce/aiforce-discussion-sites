@@ -1,0 +1,15 @@
+{
+  "name": "aiforce-discussion-sites",
+  "version": "1.0.0",
+  "description": "SE workflow infographic — AI agent, GitHub, Heroku",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

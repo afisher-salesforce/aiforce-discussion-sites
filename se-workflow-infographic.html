@@ -266,7 +266,13 @@
 </div>
 </div>
       </div>
-      <div class="tip" style="border-color:#2E844A;background:#EFF8F1;color:#0E5B30">
+      
+        <div class="step"><div class="step-bullet" style="background:var(--green)"></div><div class="step-text">Click <strong>Open app (internal)</strong> in the top-right of the Heroku dashboard to visit your deployed site</div></div>
+        <div class="tip" style="border-color:#E8A000;background:#FFF3E0;color:#6D4600;margin-top:10px">
+          <strong>Private Space URL fix:</strong> If you see a &ldquo;bad gateway&rdquo; error, add <code style="font-size:12px">-internal</code> after <code style="font-size:12px">herokuapp</code> in the URL.<br>
+          Example: <code style="font-size:12px">your-app.herokuapp<strong>app-internal</strong>.com</code> &rarr; <code style="font-size:12px">your-app.herokuapp<strong>-internal</strong>.com</code>
+        </div>
+        <div class="tip" style="border-color:#2E844A;background:#EFF8F1;color:#0E5B30">
         <strong>Troubleshooting deploys:</strong> Before a manual deploy, open <em>More &rarr; View Logs</em> first. Copy any errors and paste them into your AI agent to diagnose and fix.
       </div>
       <div class="pill-row" style="margin-top:14px">
